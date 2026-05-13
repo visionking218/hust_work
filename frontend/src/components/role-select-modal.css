@@ -1,0 +1,86 @@
+.role-modal-root {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.role-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 6, 13, 0.55);
+}
+
+.role-modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  padding: 1.5rem 1.35rem 1.35rem;
+  border-radius: 14px;
+  border: 1px solid var(--border, #e5e4e7);
+  background: var(--bg, #fff);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
+  text-align: left;
+}
+
+.role-modal-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-h, #08060d);
+}
+
+.role-modal-desc {
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--text, #6b6375);
+}
+
+.role-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.role-modal-btn {
+  font: inherit;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.role-modal-btn--tutor {
+  background: var(--accent, #aa3bff);
+  color: #fff;
+}
+
+.role-modal-btn--student {
+  background: transparent;
+  color: var(--accent, #aa3bff);
+  border-color: var(--accent-border, rgba(170, 59, 255, 0.5));
+}
+
+.role-modal-subtle {
+  margin: 1.1rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border, #e5e4e7);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--text, #6b6375);
+}
+
+.role-modal-subtle a {
+  color: var(--accent, #aa3bff);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.role-modal-subtle a:hover {
+  text-decoration: underline;
+}

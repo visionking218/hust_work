@@ -1,0 +1,134 @@
+/* Shared styles for login / signup routes */
+.auth-page {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 1.75rem 1rem 2.5rem;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.auth-page__title {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.35rem, 3vw, 1.6rem);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  color: var(--text-h, #08060d);
+}
+
+.auth-page__lead {
+  margin: 0 0 1.25rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--text, #6b6375);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--text-h, #08060d);
+}
+
+.auth-field input[type="text"],
+.auth-field input[type="email"],
+.auth-field input[type="password"] {
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--border, #e5e4e7);
+  background: var(--bg, #fff);
+  color: var(--text-h, #08060d);
+  box-sizing: border-box;
+}
+
+.auth-field input:focus-visible {
+  outline: 2px solid var(--accent, #aa3bff);
+  outline-offset: 1px;
+}
+
+.auth-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.auth-roles__legend {
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--text-h, #08060d);
+  margin-bottom: 0.15rem;
+}
+
+.auth-roles label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  cursor: pointer;
+  color: var(--text, #6b6375);
+}
+
+.auth-roles input {
+  accent-color: var(--accent, #aa3bff);
+}
+
+.auth-error {
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid #f87171;
+  color: var(--text-h, #08060d);
+}
+
+.auth-primary {
+  font: inherit;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: var(--accent, #aa3bff);
+  color: #fff;
+}
+
+.auth-primary:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+
+.auth-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.auth-sub {
+  margin: 0.35rem 0 0;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--border, #e5e4e7);
+  font-size: 0.92rem;
+  color: var(--text, #6b6375);
+}
+
+.auth-sub a {
+  color: var(--accent, #aa3bff);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-sub a:hover {
+  text-decoration: underline;
+}

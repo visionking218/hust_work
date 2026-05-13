@@ -1,0 +1,63 @@
+# Dependencies
+node_modules/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+env/
+
+# Build outputs
+dist/
+build/
+out/
+
+# Vite
+**/.vite/
+
+# Logs and debug
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime / local data
+uploads/
+tmp/
+temp/
+.cache/
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Package manager (optional lockfile strategy — remove lines you want tracked)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors
+.idea/
+*.swp
+*.swo
+*~
+
+# Cursor / VS Code (uncomment if you do not want personal editor config in git)
+# .vscode/
+# *.code-workspace
+
+# TypeScript incremental
+*.tsbuildinfo
+
+# Misc (dotenv local overrides, etc.)
+*.local
+.vercel
+.netlify
