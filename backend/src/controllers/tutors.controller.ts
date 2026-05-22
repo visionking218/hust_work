@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { v4 as uuidv4 } from "uuid";
+import { randomUUID } from "node:crypto";
 import { TutorsService } from "../services/tutors.services";
 
 export class TutorsController {
@@ -11,7 +11,7 @@ export class TutorsController {
 
     async createTutor(req: Request, res: Response) {
         try {
-            const tutorId = uuidv4();
+            const tutorId = randomUUID();
             const tutorData = { ...req.body, tutorId };
             const tutor = await this.tutorsService.createTutor(tutorData);
             res.status(201).json(tutor);
