@@ -17,7 +17,7 @@ type UserWithSecret = {
   _id: Types.ObjectId;
   email: string;
   role: UserRole;
-  ispaid: boolean;
+  paidServices?: string[];
   passwordHash: string;
 };
 
@@ -41,17 +41,21 @@ export class AuthService {
     return email.trim().toLowerCase();
   }
 
+  private hasPaidServices(paidServices: unknown): boolean {
+    return Array.isArray(paidServices) && paidServices.length > 0;
+  }
+
   private toPublicUser(doc: {
     _id: Types.ObjectId | string;
     email: string;
     role: UserRole;
-    ispaid?: boolean;
+    paidServices?: unknown;
   }): PublicUser {
     return {
       userId: String(doc._id),
       email: doc.email,
       role: doc.role,
-      ispaid: Boolean(doc.ispaid),
+      ispaid: this.hasPaidServices(doc.paidServices),
     };
   }
 
@@ -84,7 +88,7 @@ export class AuthService {
       _id: plain._id,
       email: String(plain.email),
       role: plain.role as UserRole,
-      ispaid: Boolean(plain.ispaid),
+      paidServices: plain.paidServices,
     });
   }
 
@@ -119,7 +123,7 @@ export class AuthService {
       _id: Types.ObjectId;
       email: string;
       role: UserRole;
-      ispaid?: boolean;
+      paidServices?: string[];
     } | null>();
     if (!user) return null;
     return this.toPublicUser(user);

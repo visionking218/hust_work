@@ -82,7 +82,9 @@ export class PaymentsService {
       throw new Error("order not found");
     }
 
-    await User.findByIdAndUpdate(order.studentUserId, { ispaid: true });
+    await User.findByIdAndUpdate(order.studentUserId, {
+      $addToSet: { paidServices: order.tutorId },
+    });
     return order;
   }
 }
